@@ -124,7 +124,7 @@ pytest
 ```
 ### Example output:
 
-```bash
+```text
 7 passed in 0.24s
 Coverage: 79%
 
@@ -195,5 +195,6 @@ Copyright (c) 2026 Rasti
 
 Rasti  
 Built as a learning project in clean Python architecture and testing discipline.
+
 
 
