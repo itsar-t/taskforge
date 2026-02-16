@@ -49,14 +49,85 @@ JSON Repository
 
 ## Installation
 
+```bash
 git clone https://github.com/itsar-t/taskforge.git
-
 cd taskforge
+```
 
-### Create virtual environment
+### Create virtual environment:
 
+```bash
 python -m venv venv
 venv\Scripts\activate   # Windows
+```
+
+### Install editable:
+
+```bash
+pip install -e .
+```
+
+## Usage 
+
+### Add a task:
+
+```bash
+taskforge add "Learn architecture"
+```
+
+### List tasks:
+
+```bash
+taskforge list
+```
+#### List pending tasks:
+```bash
+taskforge list --ispending
+```
+#### List done tasks:
+```bash
+taskforge list --isdone
+```
+
+### Mark done (using short UUID prefix):
+```bash
+taskforge done a1b2c3d4
+```
+### Mark undone (using short UUID prefix):
+```bash
+taskforge undone a1b2c3d4
+```
+### Switch done (using short UUID prefix):
+```bash
+taskforge switch a1b2c3d4
+```
+### Remove:
+```bash
+taskforge rm a1b2c3d4
+```
+## Example Output
+```bash
+1. [Undone] (a1b2c3d4) Learn architecture
+2. [Done] (f8e9d123) Build portfolio project
+
+```
+## Running Tests
+### Install pytest
+```bash
+pip install -e .[dev]
+```
+### Run:
+
+```bash
+pytest
+```
+### Example output:
+
+```bash
+7 passed in 0.24s
+Coverage: 79%
+
+```
 
 
 
