@@ -50,12 +50,14 @@ JSON Repository
 ## Installation
 
 git clone https://github.com/itsar-t/taskforge.git
+
 cd taskforge
 
 ### Create virtual environment
 
 python -m venv venv
 venv\Scripts\activate   # Windows
+
 
 
 
