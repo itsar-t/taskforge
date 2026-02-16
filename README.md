@@ -82,11 +82,11 @@ taskforge list
 ```
 #### List pending tasks:
 ```bash
-taskforge list --ispending
+taskforge list --pending
 ```
 #### List done tasks:
 ```bash
-taskforge list --isdone
+taskforge list --done
 ```
 
 ### Mark done (using short UUID prefix):
@@ -94,17 +94,42 @@ taskforge list --isdone
 taskforge done a1b2c3d4
 ```
 ### Mark undone (using short UUID prefix):
-```bash
+```text
 taskforge undone a1b2c3d4
 ```
 ### Switch done (using short UUID prefix):
-```bash
+```text
 taskforge switch a1b2c3d4
 ```
 ### Remove:
-```bash
+```text
 taskforge rm a1b2c3d4
 ```
+
+### Remove ALL tasks:
+```text
+taskforge rm --all
+```
+### Remove ALL tasks without confirmation:
+```text
+taskforge rm --all --yes
+```
+
+### Remove ALL PENDING tasks:
+```text
+taskforge rm --pending
+```
+### Remove ALL PENDING tasks without confirmation:
+```text
+taskforge rm --pending --yes
+```
+
+### Remove ALL DONE tasks (No confirmation on this one):
+```text
+taskforge rm --done 
+```
+
+
 ## Example Output
 ```bash
 1. [Undone] (a1b2c3d4) Learn architecture

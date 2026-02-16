@@ -4,21 +4,22 @@ import json
 from pathlib import Path
 
 from taskforge.services.tracker import Tracker
-from taskforge.storage.repository import TrackerRespository
+from taskforge.storage.repository import TrackerRepository
 
-class JsonTrackerRepo(TrackerRespository):
+
+class JsonTrackerRepo(TrackerRepository):
     def __init__(self, path: Path) -> None:
         self.path = path
 
     def load(self) -> Tracker:
         if not self.path.exists():
             return Tracker()
-        
+
         with self.path.open("r", encoding="utf-8") as f:
             data = json.load(f)
 
         return Tracker.from_dict(data)
-    
+
     def save(self, tracker: Tracker) -> None:
         self.path.parent.mkdir(parents=True, exist_ok=True)
 
