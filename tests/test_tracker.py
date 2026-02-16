@@ -28,7 +28,35 @@ def test_add_and_mark_done_by_id():
     assert len(tr.pending()) == 1
     assert len (tr.done()) == 1
 
+def test_add_and_switch_done_by_id():
+    tr = Tracker()
+    t = tr.add_title("A")
+    tr.add_title("B")
 
+    tr.switch_done_by_id(t.id)
+
+    assert tr.get_by_id(t.id).done is True
+    assert len(tr.pending()) == 1
+    assert len (tr.done()) == 1
+
+def test_add_and_mark_undone_by_id():
+    tr = Tracker()
+    t = tr.add_title("A")
+    tr.add_title("B")
+   
+
+    tr.mark_done_by_id(t.id)
+    
+    assert tr.get_by_id(t.id).done is True
+    assert len(tr.pending()) == 1
+    assert len (tr.done()) == 1
+
+    tr.mark_undone_by_id(t.id)
+
+    assert tr.get_by_id(t.id).done is False
+    assert len(tr.pending()) == 2
+    assert len (tr.done()) == 0
+    
 def test_remove_by_id_removes_correct_task():
     tr = Tracker()
     t1 = tr.add_title("A")
