@@ -3,6 +3,7 @@ from pathlib import Path
 from taskforge.services.tracker import Tracker
 from taskforge.storage.json_repo import JsonTrackerRepo
 
+
 def test_json_repo_roundtrip(tmp_path: Path):
     path = tmp_path / "tasks.json"
     repo = JsonTrackerRepo(path)
