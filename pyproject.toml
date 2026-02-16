@@ -1,0 +1,28 @@
+[project]
+name = "taskforge"
+version = "0.1.0"
+description = "A clean task tracking engine."
+authors = [{ name = "Rasti" }]
+requires-python = ">=3.10"
+dependencies = [
+ 
+  ]
+
+[project.scripts]
+taskforge = "taskforge.cli:run"
+
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[tool.coverage.run]
+omit = [
+  "src/taskforge/cli.py",
+  "src/taskforge/__main__.py",
+  "src/taskforge/storage/repository.py"
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+
