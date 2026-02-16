@@ -90,7 +90,7 @@ taskforge list --isdone
 ```
 
 ### Mark done (using short UUID prefix):
-```bash
+```text
 taskforge done a1b2c3d4
 ```
 ### Mark undone (using short UUID prefix):
@@ -195,4 +195,5 @@ Copyright (c) 2026 Rasti
 
 Rasti  
 Built as a learning project in clean Python architecture and testing discipline.
+
 
