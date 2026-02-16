@@ -39,14 +39,14 @@ Repository Interface
   ↓
 JSON Repository
 ```
-
+---
 ## Desing Principles Used
 * Single Responsibility Principle
 * Dependency Inversion
 * Encapsulation
 * Backward Compatibility
 * Separation of Concerns
-
+---
 ## Installation
 
 ```bash
@@ -66,7 +66,7 @@ venv\Scripts\activate   # Windows
 ```bash
 pip install -e .
 ```
-
+---
 ## Usage 
 
 ### Add a task:
@@ -111,6 +111,7 @@ taskforge rm a1b2c3d4
 2. [Done] (f8e9d123) Build portfolio project
 
 ```
+---
 ## Running Tests
 ### Install pytest
 ```bash
@@ -128,7 +129,70 @@ pytest
 Coverage: 79%
 
 ```
+---
+## Project Structure
+
+```text
+taskforge/
+│
+├── src/
+│   └── taskforge/
+│       ├── domain/
+│       │   └── task.py
+│       ├── services/
+│       │   └── tracker.py
+│       ├── storage/
+│       │   ├── repository.py
+│       │   └── json_repo.py
+│       ├── cli.py
+│       └── __main__.py
+│
+├── tests/
+│   ├── test_task.py
+│   ├── test_tracker.py
+│   └── test_json_repo.py
+│
+├── pyproject.toml
+└── README.md
+```
+---
+
+## Persistence
+
+Tasks are stored in:
+
+```bash
+data/tasks.json
+```
+
+The system is backward compatible:
+
+- Missing `id` fields are automatically generated.
+- Missing `done` fields default to `False`.
+
+---
 
 
+## Future Improvements
 
+- SQLite backend
+- Rich CLI formatting (rich library)
+- Sorting & filtering
+- Export / import
+- REST API wrapper
+- Packaging for PyPI
+
+---
+
+## License
+
+MIT License  
+Copyright (c) 2026 Rasti
+
+---
+
+## Author
+
+Rasti  
+Built as a learning project in clean Python architecture and testing discipline.
 
